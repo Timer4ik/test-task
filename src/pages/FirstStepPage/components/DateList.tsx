@@ -13,7 +13,6 @@ const DateList: FC = () => {
             {dates.map((date) => {
                 return (
                     <div key={date.id} className={"block__wrapper " + styles.flex__block}>
-
                         <Remove onClick={() => setDates(dates.filter((d) => d.id != date.id))} />
                         <Input type='date' value={date.startDate} label='Дата начала' />
                         <Input type='time' value={date.startTime} inputAlign='right' label='Время начала' />

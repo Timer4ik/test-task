@@ -13,8 +13,6 @@ import './App.css';
 import { Context } from './pages/Context/Context';
 
 
-
-
 function App() {
 
   const organizer: useInputType = useInput("", (text: string) => {
@@ -31,7 +29,8 @@ function App() {
   const phone: useInputType = useInput("", (text: string) => {
     let isValid = true
     let message = ""
-    if (!isLength(text, 11, 12) || isNaN(+text.trim())) {
+    if (text.includes("_") || !isLength(text,19,50)) {
+      console.log(text)
       message = "Некорректный номер телефона"
       isValid = false
     } else isValid = true

@@ -1,4 +1,5 @@
-import React, { FC,  ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
+import ReactInputMask from 'react-input-mask'
 import styles from "./style.module.css"
 
 interface Props {
@@ -14,19 +15,24 @@ interface Props {
     name?: string
     onClick?: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => any
     error?: string
-    readOnly?:boolean
-    
+    readOnly?: boolean
+    mask?:string
 }
 
-const Input: FC<Props> = ({ label, children, inputAlign, display, onClick, className, name, type, error, ...props }) => {
+const Input: FC<Props> = ({ label, children, inputAlign, display, onClick, className, name, type, error, mask,...props }) => {
 
     return (
         <div className={className}>
             {label && <label className={styles.title}>{label}</label>}
 
-            {children ? children : <input onClick={onClick} {...props} type={type || "text"} style={{ textAlign: inputAlign, display, border: error ? "1px solid red" : "" }} className={styles.input} />}
+            {children ?
+                children :
+                <ReactInputMask mask={mask || ""} onClick={onClick} {...props}
+                    type={type || "text"} style={{ textAlign: inputAlign, display, border: error ? "1px solid red" : "" }}
+                    className={styles.input} />
+            }
 
-            <div style={{color:"red",wordBreak:"break-all"}}>{error}</div>
+            <div style={{ color: "red", wordBreak: "break-all" }}>{error}</div>
         </div>
     )
 }

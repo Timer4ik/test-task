@@ -11,6 +11,7 @@ import RatingOption from './components/RatingOption'
 import styles from "../style.module.css"
 import "./style.css"
 import { Context } from '../Context/Context'
+import ReactInputMask from 'react-input-mask'
 
 const FirstStepPage: FC = () => {
 
@@ -36,7 +37,7 @@ const FirstStepPage: FC = () => {
                 <h5 className={styles.medium_title}>Контактные данные</h5>
 
                 <div className={styles.flex3}>
-                    <Input {...phone.bind} error={phone.error} name="phone" label='Телефон' />
+                    <Input {...phone.bind} error={phone.error} mask={"8 (999)-(999)-99-99"} name="phone" label='Телефон' />
                     <Input {...email.bind} error={email.error} name="email" type='email' label='E-mail' />
                     <Input {...city.bind} error={city.error} name="city" label='Город организатора' />
                 </div>

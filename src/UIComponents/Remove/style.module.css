@@ -1,0 +1,50 @@
+.remove__button {
+    background: #351767;
+    border-radius: 50%;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: -7.5px;
+    margin-right: -7.5px;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    border: 1px solid #351767;
+}
+
+.remove__button:hover {
+    background: white;
+}
+
+.remove__button:hover .remove:after,
+.remove__button:hover .remove:before {
+    background-color: #351767;
+    border: 1px solid #351767;
+}
+
+.remove:before,
+.remove:after {
+    background: #FFFFFF;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 2px;
+    border: 1px solid white;
+}
+
+.remove:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.remove:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.remove__button {
+    position: absolute;
+    top: 0;
+    right: -5px;
+}

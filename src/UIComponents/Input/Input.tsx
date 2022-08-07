@@ -1,7 +1,5 @@
-import React, { FC, LegacyRef, ReactElement, ReactNode } from 'react'
+import React, { FC,  ReactNode } from 'react'
 import styles from "./style.module.css"
-import { useField, ErrorMessage, FieldHookConfig } from "formik"
-
 
 interface Props {
     label?: string

@@ -14,11 +14,11 @@ const DateList: FC = () => {
                 return (
                     <div key={date.id} className={"block__wrapper " + styles.flex__block}>
                         <Remove onClick={() => setDates(dates.filter((d) => d.id != date.id))} />
-                        <Input type='date' value={date.startDate} label='Дата начала' />
-                        <Input type='time' value={date.startTime} inputAlign='right' label='Время начала' />
+                        <Input type='date' value={date.startDate} readOnly={true} label='Дата начала' />
+                        <Input type='time' value={date.startTime} readOnly={true} inputAlign='right' label='Время начала' />
                         <div className="line"></div>
-                        <Input type='date' value={date.endDate} label='Дата окончания' />
-                        <Input type='time' value={date.endTime} inputAlign='right' label='Время окончания' />
+                        <Input type='date' value={date.endDate} readOnly={true} label='Дата окончания' />
+                        <Input type='time' value={date.endTime} readOnly={true} inputAlign='right' label='Время окончания' />
                     </div>
                 )
             })}

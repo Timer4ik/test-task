@@ -30,7 +30,6 @@ function App() {
     let isValid = true
     let message = ""
     if (text.includes("_") || !isLength(text,19,50)) {
-      console.log(text)
       message = "Некорректный номер телефона"
       isValid = false
     } else isValid = true
